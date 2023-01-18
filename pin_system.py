@@ -6,7 +6,6 @@ import picture
 # Lists for correct PIN and empty list to add current input to
 correct_pin = [1, 2, 3, 4]
 pin = []
-pic_number = 0
 
 
 def add_to_pin(channel, event):
@@ -58,8 +57,7 @@ try:
                     time.sleep(0.1)
             else:  # Failed 3 times, so take picture of intruder
                 print('Too many attempts, intruder!')
-                picture.take_picture('intruder', pic_number)
-                pic_number += 1
+                picture.take_picture('intruder')
                 attempts = 0
         pin = []
 
